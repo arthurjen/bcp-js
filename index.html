@@ -8,8 +8,8 @@
 <body>
     <p>See the console.</p>
     <script>
-        var x = 15;
-        var y = 3;
+        /*var x = +prompt('What is the value of x?');
+        var y = +prompt('What is the value of y?');
         var z = x + y;
         
         if(z > 25) {
@@ -20,16 +20,40 @@
         }
         else {
             console.log('sorry number', z, 'not big enough');
-        }
+        }*/
 
     </script>
+
     <script>
-        for(var i = 0; i < 10; i++) {
-            if(i % 2 === 0 && i !== 0) {
-                console.log(i + ' is an even number.');
+        var max = +prompt('Count up to?');
+        var confirmed = confirm('Click ok for even, cancel for odd');
+        var remainder;
+        if(confirmed === true) {
+            remainder = 0;
+        }
+        else {
+            remainder = 1;
+        }
+        for(var i = 0; i < max; i++) {
+            if(i % 2 === remainder) {
+                console.log(i);
             }
-            else {
-                console.log(i + ' is not an even number.');
+        }
+        
+    </script>
+    <script>
+        var primeQuestion = confirm("Would you like to count prime numbers?")
+        if(primeQuestion === true) {
+            var max = +prompt('Count prime numbers up to what?');
+            for(var i = 2; i < max; i++) {
+                for(var j = 2; j < i; j++) {
+                    if(i % j === 0) {
+                        console.log(i, j);
+                    }
+                    else if(i === j) {
+                        console.log("prime number: ", i);
+                    }
+                }
             }
         }
     </script>
